@@ -2,10 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using CuttingRoom.VariableSystem;
+using CuttingRoom.VariableSystem.Variables;
+using System;
+using UnityEditor;
 
 namespace CuttingRoom
 {
     [RequireComponent(typeof(VariableStore))]
+    [ExecuteInEditMode]
     public class NarrativeSpace : MonoBehaviour
     {
         /// <summary>
@@ -32,9 +36,76 @@ namespace CuttingRoom
         [SerializeField]
         private VariableStore globalVariableStore = null;
 
+        private Sequencer sequencer = null;
+
+        public Sequencer Sequencer { get => sequencer; }
+
         /// <summary>
         /// Get accessor for the global variable store.
         /// </summary>
         public VariableStore GlobalVariableStore { get { return globalVariableStore; } set { globalVariableStore = value; } }
+
+        public void Start()
+        {
+            if (Application.isPlaying || EditorApplication.isPlaying)
+            {
+                sequencer = new(rootNarrativeObject, this, true);
+                sequencer.Start();
+            }
+        }
+
+#if UNITY_EDITOR
+        public void Awake()
+        {
+            InitialiseVariableStore();
+        }
+
+        /// <summary>
+        /// Ensure variable store is correctly initialised and contains required variables.
+        /// </summary>
+        public void InitialiseVariableStore()
+        {
+            if (globalVariableStore == null)
+            {
+                globalVariableStore = GetComponent<VariableStore>();
+            }
+            if (!globalVariableStore.Variables.ContainsKey("true"))
+            {
+                BoolVariable trueVariable = globalVariableStore.GetOrAddVariable<BoolVariable>("TRUE", Variable.VariableCategory.SystemDefined, true) as BoolVariable;
+                globalVariableStore.RefreshDictionary();
+            }
+            if (!globalVariableStore.Variables.ContainsKey("false"))
+            {
+                BoolVariable falseVariable = globalVariableStore.GetOrAddVariable<BoolVariable>("FALSE", Variable.VariableCategory.SystemDefined, false) as BoolVariable;
+                globalVariableStore.RefreshDictionary();
+            }
+        }
+
+        public event Action OnChanged;
+
+        /// <summary>
+        /// Updates event handlers for all variables
+        /// </summary>
+        public virtual void OnValidate()
+        {
+            if (globalVariableStore != null)
+            {
+                foreach (var variable in globalVariableStore.variableList)
+                {
+                    if (variable != null)
+                    {
+                        variable.OnVariableSet -= OnVariableChange;
+                        variable.OnVariableSet += OnVariableChange;
+                    }
+                }
+            }
+            OnChanged?.Invoke();
+        }
+
+        private void OnVariableChange(Variable variable)
+        {
+            OnChanged?.Invoke();
+        }
+#endif
     }
 }

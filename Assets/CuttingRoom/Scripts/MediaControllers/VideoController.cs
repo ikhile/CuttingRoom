@@ -101,9 +101,11 @@ namespace CuttingRoom
                     {
                         if (uiDocument.panelSettings == null)
                         {
-                            uiDocument.panelSettings = Resources.Load<PanelSettings>("CuttingRoom/UI/UIVideoPanelSettings");
+                            uiDocument.panelSettings = Resources.Load<PanelSettings>("CuttingRoom/UI/OverlayPanelSettings");
+                            uiDocument.sortingOrder = 0;
                         }
                         rootVisualElement = uiDocument.rootVisualElement;
+                        rootVisualElement.pickingMode = PickingMode.Ignore;
 
                         rootVisualElement.style.width = Screen.width;
                         rootVisualElement.style.height = Screen.height;
@@ -168,6 +170,10 @@ namespace CuttingRoom
         /// </summary>
         public override void Unload()
         {
+            if (videoPlayer == null)
+            {
+
+            }
             videoPlayer.Stop();
             StartCoroutine(ShutdownDelay());
         }

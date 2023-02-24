@@ -3,17 +3,26 @@ using CuttingRoom.VariableSystem.Constraints;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Collections;
 using UnityEngine;
+using CuttingRoom.VariableSystem.Variables;
+using System.Linq;
+#if UNITY_EDITOR
+using CuttingRoom.Editor;
+#endif
 
 namespace CuttingRoom
 {
     [RequireComponent(typeof(OutputSelectionDecisionPoint), typeof(VariableStore))]
+    [ExecuteInEditMode]
     public class NarrativeObject : MonoBehaviour
     {
+        public static string hasPlayedTagName = "hasPlayed";
+
         /// <summary>
         /// The guid for this narrative object.
         /// </summary>
-        [HideInInspector]
+        [InspectorVisible]
         public string guid = Guid.NewGuid().ToString();
 
         /// <summary>
@@ -32,6 +41,8 @@ namespace CuttingRoom
         /// </summary>
         [SerializeField]
         private VariableStore variableStore = null;
+
+
 
         /// <summary>
         /// Get accessor for the variable store on this narrative object.
@@ -55,10 +66,69 @@ namespace CuttingRoom
         public List<Constraint> constraints = new List<Constraint>();
 
 #if UNITY_EDITOR
+        public void Awake()
+        {
+            InitialiseVariableStore(forceRefresh: true);
+        }
+
         public void Reset()
         {
             ProcessingEndTrigger defaultEndOfContentTrigger = ProcessingEndTriggerFactory.AddProcessingTriggerToNarrativeObject(this, ProcessingEndTriggerFactory.TriggerType.EndOfContent);
+            InitialiseVariableStore(forceRefresh: true);
         }
+
+        /// <summary>
+        /// Ensure variable store is correctly initialised and contains required variables.
+        /// </summary>
+        /// <param name="forceRefresh"></param>
+        public void InitialiseVariableStore(bool forceRefresh = false)
+        {
+            if (VariableStore == null)
+            {
+                VariableStore = GetComponent<VariableStore>();
+                VariableStore.RefreshDictionary();
+            }
+            else if (forceRefresh)
+            {
+                VariableStore.RefreshDictionary();
+            }
+            if (!VariableStore.Variables.ContainsKey(hasPlayedTagName))
+            {
+                BoolVariable hasPlayedVariable = VariableStore.GetOrAddVariable<BoolVariable>(hasPlayedTagName, Variable.VariableCategory.SystemDefined, false) as BoolVariable;
+                VariableStore.RefreshDictionary();
+            }
+        }
+
+        /// <summary>
+        /// Updates event handlers for all triggers and variables
+        /// </summary>
+        public virtual void OnValidate()
+        {
+            if (EndTriggers != null)
+            {
+                foreach (var endTrigger in EndTriggers)
+                {
+                    if (endTrigger != null)
+                    {
+                        endTrigger.OnChanged -= OnChanged;
+                        endTrigger.OnChanged += OnChanged;
+                    }
+                }
+            }
+            if (VariableStore != null)
+            {
+                foreach (var variable in VariableStore.variableList)
+                {
+                    if (variable != null)
+                    {
+                        variable.OnVariableSet -= OnVariableChange;
+                        variable.OnVariableSet += OnVariableChange;
+                    }
+                }
+            }
+            OnChanged?.Invoke();
+        }
+
 #endif
 
         /// <summary>
@@ -94,19 +164,8 @@ namespace CuttingRoom
 
         protected Action OnChangedInternal { get { return OnChanged; } }
 
-        public virtual void OnValidate()
+        private void OnVariableChange(Variable variable)
         {
-            if (EndTriggers != null)
-            {
-                foreach (var endTrigger in EndTriggers)
-                {
-                    if (endTrigger != null)
-                    {
-                        endTrigger.OnChanged -= OnChanged;
-                        endTrigger.OnChanged += OnChanged;
-                    }
-                }
-            }
             OnChanged?.Invoke();
         }
 

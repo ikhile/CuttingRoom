@@ -31,10 +31,15 @@ namespace CuttingRoom
 		private new OnSelectionCallback onSelection = null;
 
 #if UNITY_EDITOR
-		// Set default group termination method
+		// Set default group selection and termination methods
         public void Reset()
         {
-			if (string.IsNullOrEmpty(terminationMethodContainer.methodName))
+            if (string.IsNullOrEmpty(selectionMethodContainer.methodName))
+            {
+                selectionMethodContainer.methodName = nameof(Random);
+            }
+
+            if (string.IsNullOrEmpty(terminationMethodContainer.methodName))
 			{
 				terminationMethodContainer.methodName = nameof(HasMadeSelection);
             }
@@ -55,7 +60,7 @@ namespace CuttingRoom
 			terminationMethodContainer.Init();
 		}
 
-		public override IEnumerator Process(Sequencer sequencer, OnSelectionCallback onSelection)
+		public override IEnumerator Process(OnSelectionCallback onSelection)
 		{
 			if (selectionMethodContainer.Initialised && terminationMethodContainer.Initialised)
 			{
@@ -80,7 +85,7 @@ namespace CuttingRoom
 							// Store the number of selections made before invoking the process method.
 							int preProcessSelectionCount = selections.Count;
 
-							List<NarrativeObject> validCandidates = ProcessConstraints(sequencer, constraints);
+							List<NarrativeObject> validCandidates = ProcessConstraints(constraints);
 
 							MethodContainer.Args args = new MethodContainer.Args { onSelection = OnSelection, candidates = validCandidates };
 
@@ -102,7 +107,7 @@ namespace CuttingRoom
 			}
 		}
 
-		public override IEnumerator Process(Sequencer sequencer, OnMultiSelectionCallback onSelection)
+		public override IEnumerator Process(OnMultiSelectionCallback onSelection)
 		{
 			// Not implemented
 			throw new NotImplementedException("Process() not implemented for multi selection on groups.");

@@ -123,12 +123,12 @@ namespace CuttingRoom.Editor
             if (contentType == MediaController.ContentTypeEnum.Video)
             {
                 // Find the sequencer.
-                Sequencer sequencer = UnityEngine.Object.FindObjectOfType<Sequencer>();
+                NarrativeSpace narrativeSpace = UnityEngine.Object.FindObjectOfType<NarrativeSpace>();
 
                 VideoController videoController = AtomicNarrativeObject.MediaController as VideoController;
                 if (videoController != null)
                 {
-                    if (sequencer != null && (sequencer.NarrativeSpace.UnlockAdvancedFeatures || videoController.sourceLocation != VideoController.SourceLocation.VideoClip))
+                    if (narrativeSpace != null && (narrativeSpace.UnlockAdvancedFeatures || videoController.sourceLocation != VideoController.SourceLocation.VideoClip))
                     {
                         // Set video source type
                         VisualElement videoSourcePicker = UIElementsUtils.CreateEnumFieldRow("Video Source Type", videoController.sourceLocation, (newValue) =>
@@ -158,7 +158,7 @@ namespace CuttingRoom.Editor
                     else if (videoController.sourceLocation == VideoController.SourceLocation.Url)
                     {
                         // Set video url
-                        VisualElement videoUrl = UIElementsUtils.CreateTextFieldRow("Video", videoController.url, (newValue) =>
+                        VisualElement videoUrl = UIElementsUtils.CreateTextFieldRow("Video", videoController.url, multiline: false, (newValue) =>
                         {
                             Undo.RecordObject(videoController, "Set Video URL");
                             videoController.url = newValue;
@@ -233,6 +233,128 @@ namespace CuttingRoom.Editor
                     mediaSourceRow.Add(audioPicker);
                 }
             }
+            else if (contentType == MediaController.ContentTypeEnum.Text)
+            {
+                TextController textController = AtomicNarrativeObject.MediaController as TextController;
+                if (textController != null)
+                {
+                    VisualElement textField = UIElementsUtils.CreateTextFieldRow("Text", textController.text, multiline: true, (newValue) =>
+                    {
+                        Undo.RecordObject(textController, "Set Text Content");
+                        textController.text = newValue;
+                        AtomicNarrativeObject.MediaController = textController;
+                        // Flag that the object has changed.
+                        AtomicNarrativeObject.OnValidate();
+                    });
+                    mediaSourceRow.Add(textField);
+
+                    VisualElement fontSizeField = UIElementsUtils.CreateFloatFieldRow("Font Size", textController.fontSize, (newValue) =>
+                    {
+                        Undo.RecordObject(textController, "Set Font Size");
+                        textController.fontSize = newValue;
+                        AtomicNarrativeObject.MediaController = textController;
+                        // Flag that the object has changed.
+                        AtomicNarrativeObject.OnValidate();
+                    });
+                    mediaSourceRow.Add(fontSizeField);
+
+                    VisualElement fontColourField = UIElementsUtils.CreateColorFieldRow("Font Colour", textController.fontColour, (newValue) =>
+                    {
+                        Undo.RecordObject(textController, "Set Font Colour");
+                        textController.fontColour = newValue;
+                    });
+                    mediaSourceRow.Add(fontColourField);
+
+                    VisualElement backgroundColourField = UIElementsUtils.CreateColorFieldRow("Background Colour", textController.backgroundColour, (newValue) =>
+                    {
+                        Undo.RecordObject(textController, "Set Background Colour");
+                        textController.backgroundColour = newValue;
+                    });
+                    mediaSourceRow.Add(backgroundColourField);
+
+                    VisualElement textStyle = UIElementsUtils.CreateObjectFieldRow("Custom Style Sheet", textController.styleSheetOverride, (newValue) =>
+                    {
+                        Undo.RecordObject(textController, "Change Custom Text Stylesheet");
+                        textController.styleSheetOverride = newValue;
+                        AtomicNarrativeObject.MediaController = textController;
+                        // Flag that the object has changed.
+                        AtomicNarrativeObject.OnValidate();
+                    });
+                    mediaSourceRow.Add(textStyle);
+                }
+            }
+            else if (contentType == MediaController.ContentTypeEnum.Image)
+            {
+                ImageController imageController = AtomicNarrativeObject.MediaController as ImageController;
+                if (imageController != null)
+                {
+                    VisualElement imageField = UIElementsUtils.CreateObjectFieldRow("Image", imageController.image, (newValue) =>
+                    {
+                        Undo.RecordObject(imageController, "Set Image Content");
+                        imageController.image = newValue;
+                        AtomicNarrativeObject.MediaController = imageController;
+                        // Flag that the object has changed.
+                        AtomicNarrativeObject.OnValidate();
+                    });
+                    mediaSourceRow.Add(imageField);
+
+
+                    // Fullscreen video toggle
+                    VisualElement imageFullscreenToggle = UIElementsUtils.CreateBoolFieldRow("Fullscreen", imageController.fullscreen, (newValue) =>
+                    {
+                        Undo.RecordObject(imageController, "Set Image Fullscreen");
+                        imageController.fullscreen = newValue;
+                        AtomicNarrativeObject.MediaController = imageController;
+                        // Flag that the object has changed.
+                        AtomicNarrativeObject.OnValidate();
+                    });
+                    mediaSourceRow.Add(imageFullscreenToggle);
+
+                    // Non-fullscreen video settings
+                    if (!imageController.fullscreen)
+                    {
+                        // Width
+                        VisualElement imageWidth = UIElementsUtils.CreateIntegerFieldRow("Width", imageController.width, (newValue) =>
+                        {
+                            Undo.RecordObject(imageController, "Set Image Width");
+                            imageController.width = newValue;
+                        });
+                        // Height
+                        VisualElement imageHeight = UIElementsUtils.CreateIntegerFieldRow("Height", imageController.height, (newValue) =>
+                        {
+                            Undo.RecordObject(imageController, "Set Image Height");
+                            imageController.height = newValue;
+                        });
+                        // Left Margin
+                        VisualElement imageLeftMargin = UIElementsUtils.CreateIntegerFieldRow("Margin Left", imageController.marginLeft, (newValue) =>
+                        {
+                            Undo.RecordObject(imageController, "Set Video Margin - Left");
+                            imageController.marginLeft = newValue;
+                        });
+                        // Top Margin
+                        VisualElement imageTopMargin = UIElementsUtils.CreateIntegerFieldRow("Margin Top", imageController.marginTop, (newValue) =>
+                        {
+                            Undo.RecordObject(imageController, "Set Video Margin - Top");
+                            imageController.marginTop = newValue;
+                        });
+
+                        mediaSourceRow.Add(imageWidth);
+                        mediaSourceRow.Add(imageHeight);
+                        mediaSourceRow.Add(imageLeftMargin);
+                        mediaSourceRow.Add(imageTopMargin);
+                    }
+
+                    VisualElement imageStyle = UIElementsUtils.CreateObjectFieldRow("Custom Style Sheet", imageController.styleSheetOverride, (newValue) =>
+                    {
+                        Undo.RecordObject(imageController, "Change Custom Image Stylesheet");
+                        imageController.styleSheetOverride = newValue;
+                        AtomicNarrativeObject.MediaController = imageController;
+                        // Flag that the object has changed.
+                        AtomicNarrativeObject.OnValidate();
+                    });
+                    mediaSourceRow.Add(imageStyle);
+                }
+            }
             else if (contentType == MediaController.ContentTypeEnum.ButtonUI)
             {
                 ButtonUIController buttonController = AtomicNarrativeObject.MediaController as ButtonUIController;
@@ -241,10 +363,10 @@ namespace CuttingRoom.Editor
                     VariableSetter variableSetter = buttonController.variableSetter;
                     VariableStore targetVariableStore = null;
 
-                    // Find the sequencer.
-                    Sequencer sequencer = UnityEngine.Object.FindObjectOfType<Sequencer>();
+                    // Find the narrative space.
+                    NarrativeSpace narrativeSpace = UnityEngine.Object.FindObjectOfType<NarrativeSpace>();
 
-                    if (sequencer != null && sequencer.NarrativeSpace != null && !sequencer.NarrativeSpace.UnlockAdvancedFeatures)
+                    if (narrativeSpace != null && !narrativeSpace.UnlockAdvancedFeatures)
                     {
                         // Force only global variable without advance feature unlock
                         variableSetter.variableStoreLocation = VariableStoreLocation.Global;
@@ -254,9 +376,9 @@ namespace CuttingRoom.Editor
                     switch (variableSetter.variableStoreLocation)
                     {
                         case VariableStoreLocation.Global:
-                            if (sequencer != null && sequencer.NarrativeSpace != null)
+                            if (narrativeSpace != null)
                             {
-                                targetVariableStore = sequencer.NarrativeSpace.GlobalVariableStore;
+                                targetVariableStore = narrativeSpace.GlobalVariableStore;
                             }
                             break;
 
@@ -268,7 +390,7 @@ namespace CuttingRoom.Editor
                             break;
                     }
 
-                    if (sequencer != null && sequencer.NarrativeSpace != null && sequencer.NarrativeSpace.UnlockAdvancedFeatures)
+                    if (narrativeSpace != null && narrativeSpace.UnlockAdvancedFeatures)
                     {
                         // Variable Location
                         VisualElement variableStoreLocationEnumField = UIElementsUtils.CreateEnumFieldRow("Button Variable Location", variableSetter.variableStoreLocation, (newValue) =>
@@ -321,6 +443,16 @@ namespace CuttingRoom.Editor
                         // Add to parent container
                         mediaSourceRow.Add(variableNamePopUpField);
                     }
+
+                    VisualElement buttonSortOrder = UIElementsUtils.CreateIntegerFieldRow("Sort Order", buttonController.sortOrder, (newValue) =>
+                    {
+                        Undo.RecordObject(buttonController, "Change Custom Button UI Sort Order");
+                        buttonController.sortOrder = newValue;
+                        AtomicNarrativeObject.MediaController = buttonController;
+                        // Flag that the object has changed.
+                        AtomicNarrativeObject.OnValidate();
+                    });
+                    mediaSourceRow.Add(buttonSortOrder);
 
                     VisualElement buttonStyle = UIElementsUtils.CreateObjectFieldRow("Custom Style Sheet", buttonController.styleSheetOverride, (newValue) =>
                     {
