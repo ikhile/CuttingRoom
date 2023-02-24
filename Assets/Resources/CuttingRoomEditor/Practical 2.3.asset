@@ -10,15 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6193bfad6901e284098419ef30595741, type: 3}
-  m_Name: Practicals 2 & 3
+  m_Name: Practical 2.3
   m_EditorClassIdentifier: 
   narrativeObjectNodeStates:
   - narrativeObjectGuid: 3ee1f302-92e5-4578-9246-a24a8b753606
-    position: {x: 849.60004, y: 310.4}
+    position: {x: -0.8, y: 106.399994}
   - narrativeObjectGuid: f31e0e9e-3aa0-4d65-a059-37617a7b0d1d
-    position: {x: 1569.6, y: 251.2}
+    position: {x: 683.2, y: 48.8}
   - narrativeObjectGuid: 98ed9783-eee0-4014-91c3-2bdb6fccf93b
-    position: {x: 1221.6, y: 280.8}
+    position: {x: 310.40002, y: 48.8}
   - narrativeObjectGuid: 6863f20c-46cc-4b39-96be-793aecde0fe7
     position: {x: 0, y: 0}
   - narrativeObjectGuid: 70e3101f-f3fe-4155-bc69-debcae181d49
