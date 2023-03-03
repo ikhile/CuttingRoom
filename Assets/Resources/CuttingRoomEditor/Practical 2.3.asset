@@ -23,9 +23,18 @@ MonoBehaviour:
     position: {x: 0, y: 0}
   - narrativeObjectGuid: 70e3101f-f3fe-4155-bc69-debcae181d49
     position: {x: 0, y: 0}
+  - narrativeObjectGuid: 04dfa754-520b-407b-a6af-f9524a7ed8ee
+    position: {x: NaN, y: NaN}
+  - narrativeObjectGuid: 93f887ce-c09c-4bd6-8b49-76d05fd59937
+    position: {x: NaN, y: NaN}
+  - narrativeObjectGuid: 1e5ae9c7-a10e-4f42-b484-1d2d04563a95
+    position: {x: NaN, y: NaN}
   viewContainerStates:
   - narrativeObjectGuid: 0
     narrativeObjectNodeGuids:
+    - 04dfa754-520b-407b-a6af-f9524a7ed8ee
+    - 93f887ce-c09c-4bd6-8b49-76d05fd59937
+    - 1e5ae9c7-a10e-4f42-b484-1d2d04563a95
     - 3ee1f302-92e5-4578-9246-a24a8b753606
     - f31e0e9e-3aa0-4d65-a059-37617a7b0d1d
     - 98ed9783-eee0-4014-91c3-2bdb6fccf93b
