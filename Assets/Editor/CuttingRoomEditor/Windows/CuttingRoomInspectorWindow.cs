@@ -45,6 +45,7 @@ namespace CuttingRoom.Editor
 
         private enum SelectionSource
         {
+            None,
             Editor,
             Hierarchy
         }
@@ -88,17 +89,17 @@ namespace CuttingRoom.Editor
             CREditorWindow = editorWindow;
             CREditorConnected = true;
 
-            CREditorWindow.OnDelete -= RegenerateContents;
-            CREditorWindow.OnDelete += RegenerateContents;
+            CREditorWindow.OnDelete -= OnEditorSelection;
+            CREditorWindow.OnDelete += OnEditorSelection;
 
             CREditorWindow.OnSelect -= OnEditorSelection;
             CREditorWindow.OnSelect += OnEditorSelection;
 
-            CREditorWindow.OnDeselect -= RegenerateContents;
-            CREditorWindow.OnDeselect += RegenerateContents;
+            CREditorWindow.OnDeselect -= OnEditorSelection;
+            CREditorWindow.OnDeselect += OnEditorSelection;
 
-            CREditorWindow.OnSelectionCleared -= RegenerateContents;
-            CREditorWindow.OnSelectionCleared += RegenerateContents;
+            CREditorWindow.OnSelectionCleared -= OnEditorSelection;
+            CREditorWindow.OnSelectionCleared += OnEditorSelection;
 
             Selection.selectionChanged -= OnHierarchySelection;
             Selection.selectionChanged += OnHierarchySelection;
@@ -127,9 +128,9 @@ namespace CuttingRoom.Editor
             CREditorConnected = false;
             if (CREditorWindow != null)
             {
-                CREditorWindow.OnDelete -= RegenerateContents;
-                CREditorWindow.OnSelect -= RegenerateContents;
-                CREditorWindow.OnDeselect -= RegenerateContents;
+                CREditorWindow.OnDelete -= OnEditorSelection;
+                CREditorWindow.OnSelect -= OnEditorSelection;
+                CREditorWindow.OnDeselect -= OnEditorSelection;
                 CREditorWindow.OnSelectionCleared -= OnEditorSelection;
                 Selection.selectionChanged -= OnHierarchySelection;
                 EditorApplication.playModeStateChanged -= HandlePlayModeChange;
@@ -210,12 +211,14 @@ namespace CuttingRoom.Editor
         {
             selectionSource = SelectionSource.Editor;
             RegenerateContents();
+            selectionSource = SelectionSource.None;
         }
 
         private void OnHierarchySelection()
         {
             selectionSource = SelectionSource.Hierarchy;
             RegenerateContents();
+            selectionSource = SelectionSource.None;
         }
 
         private void RegenerateContents()
@@ -247,11 +250,7 @@ namespace CuttingRoom.Editor
             // In this case, the "selected" list is going to be empty, rendering global settings (no editor selection).
             if (CREditorWindow != null && CREditorWindow.GraphView != null)
             {
-                if (selectionSource == SelectionSource.Editor)
-                {
-                    selected = CREditorWindow.GraphView.selected;
-                }
-                else if (selectionSource == SelectionSource.Hierarchy)
+                if (selectionSource == SelectionSource.Hierarchy)
                 {
                     GameObject selectedGameObject = Selection.activeGameObject;
                     if (selectedGameObject != null && selectedGameObject.TryGetComponent(out NarrativeObject narrativeObject))
@@ -265,6 +264,10 @@ namespace CuttingRoom.Editor
                             }
                         }
                     }
+                }
+                else
+                {
+                    selected = CREditorWindow.GraphView.selected;
                 }
             }
 
@@ -305,7 +308,8 @@ namespace CuttingRoom.Editor
                     Inspector.UpdateContentForEdge(outputNarrativeObjectNode, inputNarrativeObjectNode);
                 }
             }
-            else
+            // Do not update to global content if the selection change is from the Hierarchy. Hierarchy cleared selections happen when edges are selected.
+            else if (selectionSource != SelectionSource.Hierarchy)
             {
                 // No selection so show variables for global things.
                 Inspector.UpdateContentForGlobal(narrativeSpace);
