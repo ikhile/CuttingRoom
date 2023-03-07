@@ -1,0 +1,17 @@
+VisualElement {
+    position: absolute;
+    top: 10%;
+    max-width: 100%;
+    text-align: center;
+    font-size: 28px;
+    color: white;
+    white-space: normal;
+}
+
+#Text {
+    color: red;
+}
+
+.test {
+    color: pink;
+}

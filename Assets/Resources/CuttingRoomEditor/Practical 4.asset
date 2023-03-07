@@ -1,0 +1,46 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6193bfad6901e284098419ef30595741, type: 3}
+  m_Name: Practical 4
+  m_EditorClassIdentifier: 
+  narrativeObjectNodeStates: []
+  viewContainerStates:
+  - narrativeObjectGuid: 0
+    narrativeObjectNodeGuids: []
+  - narrativeObjectGuid: 98c09ada-d0cc-4ffb-94cf-9c34081d0ca4
+    narrativeObjectNodeGuids:
+    - 3951094c-c80e-48bc-aa4d-2dd0fa4ce8e9
+    - d48461c8-56cf-45f9-918a-23e6476da446
+  - narrativeObjectGuid: 1478cee4-e1c3-4bfd-9e31-2505667a7795
+    narrativeObjectNodeGuids:
+    - 4efc658e-1f5a-418b-afd3-940143cff801
+    - 39134539-de84-4e59-83f3-68da4a5e3a9d
+  - narrativeObjectGuid: 39134539-de84-4e59-83f3-68da4a5e3a9d
+    narrativeObjectNodeGuids:
+    - 1e881b50-e10c-4cdc-8ef1-58b7ea63aa37
+    - 362541cc-8772-46b3-9d50-772c1839df08
+    - f10ce74f-eaff-4682-a080-9074bf88e394
+  - narrativeObjectGuid: 1e881b50-e10c-4cdc-8ef1-58b7ea63aa37
+    narrativeObjectNodeGuids:
+    - ba68ff9b-8523-42c2-a274-3823bc3557f2
+    - ad2eec7a-3544-4c10-a04a-e0b791d0dc3d
+    - 40e062a6-223b-44e3-9044-fd14ef7b6881
+  - narrativeObjectGuid: 362541cc-8772-46b3-9d50-772c1839df08
+    narrativeObjectNodeGuids:
+    - dc10f060-0faf-4592-978b-f180477357c5
+  - narrativeObjectGuid: f10ce74f-eaff-4682-a080-9074bf88e394
+    narrativeObjectNodeGuids:
+    - 23269c17-fc9d-446c-8a15-1ab50ee36a60
+    - 333d5cb8-2b9a-4b42-8075-9595e37d3553
+    - d3109d9c-ba4d-4dd8-8146-b63d0861a1f9
+  viewContainerStackGuids:
+  - 0

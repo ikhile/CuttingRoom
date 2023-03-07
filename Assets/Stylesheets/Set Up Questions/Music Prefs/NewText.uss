@@ -1,0 +1,6 @@
+VisualElement {
+    position: absolute;
+    top: 30%;
+    left: 70%;
+    font-size: 24px;
+}

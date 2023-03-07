@@ -137,6 +137,7 @@ GameObject:
   - component: {fileID: 292990}
   - component: {fileID: 292991}
   - component: {fileID: 292996}
+  - component: {fileID: 292997}
   m_Layer: 0
   m_Name: VideoBackground
   m_TagString: Untagged
@@ -162,6 +163,7 @@ MonoBehaviour:
   endTriggers:
   - {fileID: 292996}
   constraints: []
+  constraintMode: 0
   mediaController: {fileID: 292991}
   mediaParent: {fileID: 0}
   mediaSourceUnloadEvent: 1
@@ -198,7 +200,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   autoAddVariablesOnGameObject: 1
-  variableList: []
+  variableList:
+  - {fileID: 292997}
 --- !u!114 &292994
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -211,6 +214,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b33dbf477cd3f6409b204de1b971a43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  constraintMode: 0
   candidates: []
   constraints: []
   methodContainer:
@@ -248,6 +252,23 @@ MonoBehaviour:
   triggeringEvent: 1
   variableName: Choice
   valueMatch: {fileID: 0}
+--- !u!114 &292997
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 292989}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e132dfbb23143e0488b028cbecfc1c6d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  variableCategory: 1
+  variableName: hasPlayed
+  guid: 7bb93330-22b8-4562-8817-d5eaa52591a4
+  defaultValue: 0
+  value: 0
 --- !u!1 &61256645
 GameObject:
   m_ObjectHideFlags: 0
@@ -263,6 +284,7 @@ GameObject:
   - component: {fileID: 61256648}
   - component: {fileID: 61256650}
   - component: {fileID: 61256647}
+  - component: {fileID: 61256653}
   m_Layer: 0
   m_Name: O4
   m_TagString: Untagged
@@ -288,6 +310,7 @@ MonoBehaviour:
   endTriggers:
   - {fileID: 61256648}
   constraints: []
+  constraintMode: 0
   mediaController: {fileID: 61256647}
   mediaParent: {fileID: 0}
   mediaSourceUnloadEvent: 1
@@ -339,6 +362,7 @@ MonoBehaviour:
   autoAddVariablesOnGameObject: 1
   variableList:
   - {fileID: 61256650}
+  - {fileID: 61256653}
 --- !u!114 &61256650
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -351,9 +375,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae69c8d62e9129a4e91f655cd5dcc1c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Name: Content
+  variableCategory: 2
+  variableName: 
   guid: a01cc2f6-e749-451b-95fd-4c87af453b32
-  value: entertainment
+  defaultValue: 
+  value: 
 --- !u!114 &61256651
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -366,6 +392,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b33dbf477cd3f6409b204de1b971a43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  constraintMode: 0
   candidates: []
   constraints: []
   methodContainer:
@@ -386,6 +413,23 @@ Transform:
   m_Father: {fileID: 189905227}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &61256653
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 61256645}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e132dfbb23143e0488b028cbecfc1c6d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  variableCategory: 1
+  variableName: hasPlayed
+  guid: 2ff56310-a1e3-4802-84bb-13c8f496b993
+  defaultValue: 0
+  value: 0
 --- !u!1 &189905220
 GameObject:
   m_ObjectHideFlags: 0
@@ -401,6 +445,7 @@ GameObject:
   - component: {fileID: 189905223}
   - component: {fileID: 189905222}
   - component: {fileID: 189905221}
+  - component: {fileID: 189905228}
   m_Layer: 0
   m_Name: Group
   m_TagString: Untagged
@@ -457,6 +502,7 @@ MonoBehaviour:
   endTriggers:
   - {fileID: 189905222}
   constraints: []
+  constraintMode: 0
   groupSelectionDecisionPoint: {fileID: 189905226}
 --- !u!114 &189905224
 MonoBehaviour:
@@ -471,7 +517,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   autoAddVariablesOnGameObject: 1
-  variableList: []
+  variableList:
+  - {fileID: 189905228}
 --- !u!114 &189905225
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -484,6 +531,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b33dbf477cd3f6409b204de1b971a43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  constraintMode: 0
   candidates: []
   constraints: []
   methodContainer:
@@ -501,6 +549,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35150792b8eaade4a98ed3ee2ae2d0ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  constraintMode: 0
   candidates:
   - {fileID: 562635179}
   - {fileID: 61256646}
@@ -531,6 +580,23 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &189905228
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 189905220}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e132dfbb23143e0488b028cbecfc1c6d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  variableCategory: 1
+  variableName: hasPlayed
+  guid: 5ac71856-1ebd-44db-ab38-673f753c447e
+  defaultValue: 0
+  value: 0
 --- !u!1 &220557910
 GameObject:
   m_ObjectHideFlags: 0
@@ -729,6 +795,7 @@ MonoBehaviour:
   endTriggers:
   - {fileID: 373901178}
   constraints: []
+  constraintMode: 0
   mediaController: {fileID: 373901177}
   mediaParent: {fileID: 0}
   mediaSourceUnloadEvent: 1
@@ -758,6 +825,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b33dbf477cd3f6409b204de1b971a43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  constraintMode: 0
   candidates:
   - {fileID: 446060576}
   - {fileID: 858792955}
@@ -813,6 +881,7 @@ GameObject:
   - component: {fileID: 385383475}
   - component: {fileID: 385383474}
   - component: {fileID: 385383473}
+  - component: {fileID: 385383479}
   m_Layer: 0
   m_Name: UserChoice
   m_TagString: Untagged
@@ -851,6 +920,7 @@ MonoBehaviour:
   endTriggers:
   - {fileID: 385383473}
   constraints: []
+  constraintMode: 0
   layerSelectionDecisionPoint: {fileID: 385383477}
   primaryLayerRootNarrativeObject: {fileID: 292990}
 --- !u!114 &385383475
@@ -866,7 +936,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   autoAddVariablesOnGameObject: 1
-  variableList: []
+  variableList:
+  - {fileID: 385383479}
 --- !u!114 &385383476
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -879,6 +950,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b33dbf477cd3f6409b204de1b971a43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  constraintMode: 0
   candidates:
   - {fileID: 189905223}
   constraints: []
@@ -897,6 +969,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bea3e0c51629ea142bc72138e7c1324a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  constraintMode: 0
   candidates:
   - {fileID: 292990}
   - {fileID: 1649023958}
@@ -918,6 +991,23 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &385383479
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 385383472}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e132dfbb23143e0488b028cbecfc1c6d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  variableCategory: 1
+  variableName: hasPlayed
+  guid: c51ae3dc-db3d-4331-adfc-d5f14e06ca1d
+  defaultValue: 0
+  value: 0
 --- !u!1 &446060572
 GameObject:
   m_ObjectHideFlags: 0
@@ -991,6 +1081,7 @@ MonoBehaviour:
   endTriggers:
   - {fileID: 446060575}
   constraints: []
+  constraintMode: 0
   mediaController: {fileID: 446060574}
   mediaParent: {fileID: 0}
   mediaSourceUnloadEvent: 1
@@ -1021,6 +1112,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b33dbf477cd3f6409b204de1b971a43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  constraintMode: 0
   candidates: []
   constraints: []
   methodContainer:
@@ -1053,8 +1145,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae69c8d62e9129a4e91f655cd5dcc1c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Name: Content
+  variableCategory: 2
+  variableName: 
   guid: 601ba94f-cd30-462c-95d2-4ab70925fa03
+  defaultValue: 
   value: dramatic
 --- !u!1 &562635178
 GameObject:
@@ -1071,6 +1165,7 @@ GameObject:
   - component: {fileID: 562635181}
   - component: {fileID: 562635183}
   - component: {fileID: 562635180}
+  - component: {fileID: 562635186}
   m_Layer: 0
   m_Name: O2
   m_TagString: Untagged
@@ -1096,6 +1191,7 @@ MonoBehaviour:
   endTriggers:
   - {fileID: 562635181}
   constraints: []
+  constraintMode: 0
   mediaController: {fileID: 562635180}
   mediaParent: {fileID: 0}
   mediaSourceUnloadEvent: 1
@@ -1147,6 +1243,7 @@ MonoBehaviour:
   autoAddVariablesOnGameObject: 1
   variableList:
   - {fileID: 562635183}
+  - {fileID: 562635186}
 --- !u!114 &562635183
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1159,9 +1256,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae69c8d62e9129a4e91f655cd5dcc1c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Name: Content
+  variableCategory: 2
+  variableName: 
   guid: 2f68a967-d485-4294-ac19-6e7233c17ac7
-  value: dramatic
+  defaultValue: 
+  value: 
 --- !u!114 &562635184
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1174,6 +1273,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b33dbf477cd3f6409b204de1b971a43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  constraintMode: 0
   candidates: []
   constraints: []
   methodContainer:
@@ -1194,6 +1294,23 @@ Transform:
   m_Father: {fileID: 189905227}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &562635186
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 562635178}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e132dfbb23143e0488b028cbecfc1c6d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  variableCategory: 1
+  variableName: hasPlayed
+  guid: 2bb12468-fe2a-435e-bb1d-85cf5b8a9e77
+  defaultValue: 0
+  value: 0
 --- !u!1 &655632198
 GameObject:
   m_ObjectHideFlags: 0
@@ -1208,6 +1325,7 @@ GameObject:
   - component: {fileID: 655632201}
   - component: {fileID: 655632200}
   - component: {fileID: 655632199}
+  - component: {fileID: 655632205}
   m_Layer: 0
   m_Name: O1
   m_TagString: Untagged
@@ -1266,6 +1384,7 @@ MonoBehaviour:
   endTriggers:
   - {fileID: 655632200}
   constraints: []
+  constraintMode: 0
   mediaController: {fileID: 655632199}
   mediaParent: {fileID: 0}
   mediaSourceUnloadEvent: 1
@@ -1282,7 +1401,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   autoAddVariablesOnGameObject: 1
-  variableList: []
+  variableList:
+  - {fileID: 655632205}
 --- !u!114 &655632203
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1295,6 +1415,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b33dbf477cd3f6409b204de1b971a43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  constraintMode: 0
   candidates:
   - {fileID: 385383474}
   constraints: []
@@ -1316,6 +1437,23 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &655632205
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 655632198}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e132dfbb23143e0488b028cbecfc1c6d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  variableCategory: 1
+  variableName: hasPlayed
+  guid: 5a09a5bd-db15-4a9a-b022-e3318d7e313b
+  defaultValue: 0
+  value: 0
 --- !u!1 &858792952
 GameObject:
   m_ObjectHideFlags: 0
@@ -1389,6 +1527,7 @@ MonoBehaviour:
   endTriggers:
   - {fileID: 858792954}
   constraints: []
+  constraintMode: 0
   mediaController: {fileID: 858792953}
   mediaParent: {fileID: 0}
   mediaSourceUnloadEvent: 1
@@ -1419,6 +1558,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b33dbf477cd3f6409b204de1b971a43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  constraintMode: 0
   candidates: []
   constraints: []
   methodContainer:
@@ -1451,8 +1591,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae69c8d62e9129a4e91f655cd5dcc1c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Name: Content
+  variableCategory: 2
+  variableName: 
   guid: d73dee41-af20-4b7d-9b66-da863656df0d
+  defaultValue: 
   value: factual
 --- !u!1 &1001111724
 GameObject:
@@ -1581,6 +1723,9 @@ GameObject:
   - component: {fileID: 1406271528}
   - component: {fileID: 1406271527}
   - component: {fileID: 1406271530}
+  - component: {fileID: 1406271532}
+  - component: {fileID: 1406271531}
+  - component: {fileID: 1406271533}
   m_Layer: 0
   m_Name: NarrativeSpace
   m_TagString: Untagged
@@ -1618,6 +1763,9 @@ MonoBehaviour:
   autoAddVariablesOnGameObject: 1
   variableList:
   - {fileID: 1406271530}
+  - {fileID: 1406271532}
+  - {fileID: 1406271531}
+  - {fileID: 1406271533}
 --- !u!4 &1406271529
 Transform:
   m_ObjectHideFlags: 0
@@ -1645,9 +1793,62 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae69c8d62e9129a4e91f655cd5dcc1c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Name: Choice
+  variableCategory: 2
+  variableName: 
   guid: b32aa46f-edcf-45b8-873f-264b785cf437
-  value: dramatic
+  defaultValue: 
+  value: 
+--- !u!114 &1406271531
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1406271526}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e132dfbb23143e0488b028cbecfc1c6d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  variableCategory: 1
+  variableName: FALSE
+  guid: 4c77ef3f-3955-4f9b-9a64-c5dcab6e47a1
+  defaultValue: 0
+  value: 0
+--- !u!114 &1406271532
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1406271526}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e132dfbb23143e0488b028cbecfc1c6d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  variableCategory: 1
+  variableName: TRUE
+  guid: f004ae89-4e36-41c0-9f6e-185ef4549605
+  defaultValue: 1
+  value: 1
+--- !u!114 &1406271533
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1406271526}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae69c8d62e9129a4e91f655cd5dcc1c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  variableCategory: 2
+  variableName: Choice
+  guid: a578b69e-695f-41c9-bc9e-84f76b0af780
+  defaultValue: 
+  value: 
 --- !u!1 &1625729474
 GameObject:
   m_ObjectHideFlags: 0
@@ -1677,8 +1878,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea03c035a0122ed4db71001266a7761d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  narrativeSpace: {fileID: 1406271527}
-  autoStartProcessing: 1
 --- !u!4 &1625729476
 Transform:
   m_ObjectHideFlags: 0
@@ -1709,6 +1908,7 @@ GameObject:
   - component: {fileID: 1649023960}
   - component: {fileID: 1649023959}
   - component: {fileID: 1649023965}
+  - component: {fileID: 1649023966}
   m_Layer: 0
   m_Name: UserInterface
   m_TagString: Untagged
@@ -1734,6 +1934,7 @@ MonoBehaviour:
   endTriggers:
   - {fileID: 1649023965}
   constraints: []
+  constraintMode: 0
   mediaController: {fileID: 1649023959}
   mediaParent: {fileID: 0}
   mediaSourceUnloadEvent: 1
@@ -1751,6 +1952,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   numberOfButtons: 3
   styleSheetOverride: {fileID: 0}
+  sortOrder: 0
   variableSetter: {fileID: 1649023960}
   buttonTexts:
   - 2
@@ -1788,7 +1990,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   autoAddVariablesOnGameObject: 1
-  variableList: []
+  variableList:
+  - {fileID: 1649023966}
 --- !u!114 &1649023963
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1801,6 +2004,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b33dbf477cd3f6409b204de1b971a43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  constraintMode: 0
   candidates: []
   constraints: []
   methodContainer:
@@ -1838,6 +2042,23 @@ MonoBehaviour:
   triggeringEvent: 1
   variableName: Choice
   valueMatch: {fileID: 0}
+--- !u!114 &1649023966
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1649023957}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e132dfbb23143e0488b028cbecfc1c6d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  variableCategory: 1
+  variableName: hasPlayed
+  guid: 47f42f43-0da3-4351-b859-76d66e11b0c9
+  defaultValue: 0
+  value: 0
 --- !u!1 &2060061240
 GameObject:
   m_ObjectHideFlags: 0
@@ -1853,6 +2074,7 @@ GameObject:
   - component: {fileID: 2060061243}
   - component: {fileID: 2060061242}
   - component: {fileID: 2060061245}
+  - component: {fileID: 2060061248}
   m_Layer: 0
   m_Name: O3
   m_TagString: Untagged
@@ -1878,6 +2100,7 @@ MonoBehaviour:
   endTriggers:
   - {fileID: 2060061243}
   constraints: []
+  constraintMode: 0
   mediaController: {fileID: 2060061242}
   mediaParent: {fileID: 0}
   mediaSourceUnloadEvent: 1
@@ -1929,6 +2152,7 @@ MonoBehaviour:
   autoAddVariablesOnGameObject: 1
   variableList:
   - {fileID: 2060061245}
+  - {fileID: 2060061248}
 --- !u!114 &2060061245
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1941,9 +2165,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae69c8d62e9129a4e91f655cd5dcc1c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Name: Content
+  variableCategory: 2
+  variableName: 
   guid: e4778839-b790-499e-ae86-98597e770858
-  value: factual
+  defaultValue: 
+  value: 
 --- !u!114 &2060061246
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1956,6 +2182,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b33dbf477cd3f6409b204de1b971a43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  constraintMode: 0
   candidates: []
   constraints: []
   methodContainer:
@@ -1976,3 +2203,20 @@ Transform:
   m_Father: {fileID: 189905227}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2060061248
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2060061240}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e132dfbb23143e0488b028cbecfc1c6d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  variableCategory: 1
+  variableName: hasPlayed
+  guid: 97191171-3a4a-405d-85bd-8cf6479d0291
+  defaultValue: 0
+  value: 0

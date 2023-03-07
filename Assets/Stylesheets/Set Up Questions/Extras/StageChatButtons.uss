@@ -1,0 +1,7 @@
+VisualElement {
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    top: 60%;
+    left: 50%;
+}
