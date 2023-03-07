@@ -1,8 +1,8 @@
 VisualElement {
     position: absolute;
     top: 10%;
-    max-width: 100%;
-    text-align: center;
+    width: 100%;
+    -unity-text-align: middle-center;
     font-size: 28px;
     color: white;
     white-space: normal;
