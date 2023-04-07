@@ -2306,8 +2306,8 @@ GameObject:
   - component: {fileID: 556694123}
   - component: {fileID: 556694122}
   - component: {fileID: 556694121}
-  - component: {fileID: 556694120}
   - component: {fileID: 556694126}
+  - component: {fileID: 556694127}
   m_Layer: 0
   m_Name: City Choices by Country
   m_TagString: Untagged
@@ -2332,19 +2332,6 @@ Transform:
   m_Father: {fileID: 1465895822}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &556694120
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 556694118}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: acbb6697a9bfee74d9ea18c0171f1cca, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  triggered: 0
 --- !u!114 &556694121
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2378,7 +2365,7 @@ MonoBehaviour:
   outputSelectionDecisionPoint: {fileID: 556694124}
   variableStore: {fileID: 556694123}
   endTriggers:
-  - {fileID: 556694120}
+  - {fileID: 556694127}
   constraints: []
   constraintMode: 0
   groupSelectionDecisionPoint: {fileID: 556694125}
@@ -2458,6 +2445,23 @@ MonoBehaviour:
   comparisonType: 1
   value: Country
   tagVariable: {fileID: 0}
+--- !u!114 &556694127
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 556694118}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 28909c85e9b5ffc47a18a948a15d54e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  triggered: 0
+  variableLocation: 1
+  triggeringEvent: 1
+  variableName: CityChoiceNext
+  valueMatch: {fileID: 0}
 --- !u!1 &608361121
 GameObject:
   m_ObjectHideFlags: 0
