@@ -2789,5 +2789,16 @@ MonoBehaviour:
     - fde16a7b-86fd-43f0-b1a8-22c60bb2d7ff
     - 6234ddbb-d37f-421f-a771-dc31fd5d976e
     - 788ef770-d85d-4f8e-a1d4-6c903ae669c0
+  - narrativeObjectGuid: f4b161e1-f10e-4fb8-83ad-77663f56dd73
+    narrativeObjectNodeGuids:
+    - c6222b86-56c6-4429-ba14-732d60ffc616
+    - fe52e966-bad9-42a9-a166-ae4267559982
+    - 768b795c-6bd7-40c1-a74d-acc04be0b0a3
+    - 5a3d2581-6550-45c4-ac36-fc35377a745c
   viewContainerStackGuids:
+  - f4b161e1-f10e-4fb8-83ad-77663f56dd73
+  - d3041cf9-bd3e-4a7d-8880-b327955cc4f5
+  - 49a7926b-8729-48d3-9247-c91856d7aec0
+  - 8eafa2b1-6e78-4aea-ae77-8232fb83e7d2
+  - 961479ef-b773-45f7-8325-b6df4354494d
   - 0
