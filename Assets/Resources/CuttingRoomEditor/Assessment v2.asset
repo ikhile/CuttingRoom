@@ -214,7 +214,7 @@ MonoBehaviour:
   - narrativeObjectGuid: 07a33421-ded3-4c2a-95ae-ff72d312d1e5
     position: {x: 470.40002, y: 93.600006}
   - narrativeObjectGuid: 5449f794-b094-4552-bd2a-37a0a72c006a
-    position: {x: 122.399994, y: 33.6}
+    position: {x: 148.8, y: 33.6}
   - narrativeObjectGuid: 0786dfe4-71f3-41ad-a970-666032ea24af
     position: {x: 372.80002, y: 33.6}
   - narrativeObjectGuid: 7388c63c-2856-424b-9d15-92e357d0b56a
@@ -226,7 +226,7 @@ MonoBehaviour:
   - narrativeObjectGuid: e35e9cc7-366a-48d2-b6ff-76b76e3113a0
     position: {x: 346.40002, y: 69.600006}
   - narrativeObjectGuid: 273f7556-31c6-4a33-ada4-9adb9c02a06a
-    position: {x: 372, y: 33.6}
+    position: {x: 388, y: 33.6}
   - narrativeObjectGuid: d10d7cfd-43fc-41d4-8692-649811bfa947
     position: {x: 430.40002, y: 117.600006}
   - narrativeObjectGuid: 5222a097-4677-4d4a-8d50-685483bfb1df
@@ -1106,11 +1106,11 @@ MonoBehaviour:
   - narrativeObjectGuid: 80775635-d550-4cac-9038-4e470c499e11
     position: {x: 540, y: 36.8}
   - narrativeObjectGuid: 34ddb40f-da1d-44b7-a181-7c611574dca7
-    position: {x: 580, y: -84}
+    position: {x: 504, y: -151.2}
   - narrativeObjectGuid: 7e1954d8-9a2e-453c-9243-283a59d5e985
     position: {x: 824.8, y: -8.000001}
   - narrativeObjectGuid: d547f47a-dd91-4cd0-9a39-4682e8017ca9
-    position: {x: 1055.2, y: 209.6}
+    position: {x: 1441.6, y: 33.6}
   - narrativeObjectGuid: a4e4d42d-03d2-473b-9ddc-3ce3f411cc52
     position: {x: 549.60004, y: -13.6}
   - narrativeObjectGuid: 585bd29f-0f64-4aa0-b678-0f62e528b92d
@@ -1950,7 +1950,7 @@ MonoBehaviour:
   - narrativeObjectGuid: be4b852f-4d9f-44f2-8bd7-9bd4ff405c60
     position: {x: 369.6, y: 239.2}
   - narrativeObjectGuid: c205b28c-fd5a-4392-9ec8-0c787d8b7802
-    position: {x: 727.2, y: 281.59998}
+    position: {x: 692, y: 312.8}
   - narrativeObjectGuid: 1f5c4b7b-6164-417b-8fc2-95b34f712d18
     position: {x: 340, y: -32.800003}
   - narrativeObjectGuid: 8ec1ef73-d454-4023-83cd-bd3422e8fe52
@@ -2038,11 +2038,11 @@ MonoBehaviour:
   - narrativeObjectGuid: 8eafa2b1-6e78-4aea-ae77-8232fb83e7d2
     position: {x: 391.2, y: 51.2}
   - narrativeObjectGuid: 49a7926b-8729-48d3-9247-c91856d7aec0
-    position: {x: 1087.2, y: -46.4}
+    position: {x: 1094.3999, y: -4.800001}
   - narrativeObjectGuid: fefb390b-32b9-4713-af75-b63b7d1e2a53
     position: {x: 640, y: 147.2}
   - narrativeObjectGuid: d3041cf9-bd3e-4a7d-8880-b327955cc4f5
-    position: {x: 640, y: -1.6000004}
+    position: {x: 640, y: 19.2}
   - narrativeObjectGuid: 408ee6b8-9d53-4890-a9c9-cb2367f649c2
     position: {x: 119.2, y: 40.8}
   - narrativeObjectGuid: 02bc8118-fada-4f2a-a2ed-0e9277892081
@@ -2060,21 +2060,21 @@ MonoBehaviour:
   - narrativeObjectGuid: c582f112-fa62-4bce-a1bc-14c065161a4d
     position: {x: 598.4, y: 40.8}
   - narrativeObjectGuid: f17f49bf-77c9-4899-9686-0219a741edfd
-    position: {x: 379.6, y: 109.2}
+    position: {x: 380, y: 123.2}
   - narrativeObjectGuid: 25e4f77d-82fe-4c04-a28b-50ee637d1cca
-    position: {x: 133.2, y: 85.2}
+    position: {x: 133.59999, y: 84.8}
   - narrativeObjectGuid: 04b85b92-7887-41f0-9516-8e6a3653173f
-    position: {x: 370.80002, y: 141.2}
+    position: {x: 371.2, y: 140.8}
   - narrativeObjectGuid: 254fa3c1-fa89-4893-838b-06bb6bdee2a7
-    position: {x: 618, y: 102}
+    position: {x: 618.4, y: 101.600006}
   - narrativeObjectGuid: 272ce550-856d-4dd7-bce9-9f236741e610
-    position: {x: 541.2, y: 293.2}
+    position: {x: 541.60004, y: 268}
   - narrativeObjectGuid: 71b0039c-559b-4fda-adb7-cb495a2c9d19
-    position: {x: 379.6, y: 394}
+    position: {x: 380, y: 373.59998}
   - narrativeObjectGuid: 455f9fa5-4e69-4394-af9e-083a78dc17ca
-    position: {x: 379.6, y: 249.2}
+    position: {x: 380, y: 248.8}
   - narrativeObjectGuid: f4b161e1-f10e-4fb8-83ad-77663f56dd73
-    position: {x: 359.2, y: 40.8}
+    position: {x: 375.2, y: 40.8}
   - narrativeObjectGuid: c6222b86-56c6-4429-ba14-732d60ffc616
     position: {x: 122.799995, y: 75.6}
   - narrativeObjectGuid: fe52e966-bad9-42a9-a166-ae4267559982
@@ -2084,11 +2084,11 @@ MonoBehaviour:
   - narrativeObjectGuid: 5a3d2581-6550-45c4-ac36-fc35377a745c
     position: {x: 530.80005, y: 283.6}
   - narrativeObjectGuid: 79544a0b-1b68-4ffe-b708-d6beded9a2cd
-    position: {x: 886.4, y: 147.2}
+    position: {x: 640, y: 272}
   - narrativeObjectGuid: a25f22aa-2ff4-430a-96ee-c79ed6f24f3a
     position: {x: 426.40002, y: 188.8}
   - narrativeObjectGuid: c59314d2-1753-479f-b7ca-ae51173e4bce
-    position: {x: 181.59999, y: 132.8}
+    position: {x: 169.59999, y: 121.600006}
   - narrativeObjectGuid: 1be4b652-7c2b-4fae-acd9-9a2a1285183e
     position: {x: 652.4, y: 51.6}
   - narrativeObjectGuid: fd56c3ad-afa1-47a5-b0f3-2ff57ea22c9c
@@ -2144,27 +2144,37 @@ MonoBehaviour:
   - narrativeObjectGuid: da2691a5-18e8-4295-9f71-4d8953747d5c
     position: {x: 426.40002, y: 65.600006}
   - narrativeObjectGuid: fde16a7b-86fd-43f0-b1a8-22c60bb2d7ff
-    position: {x: 652.8, y: 9.599998}
+    position: {x: 649.60004, y: -4.800001}
   - narrativeObjectGuid: 5c13a654-17ce-4b2e-8db8-7e8d570dcc3b
     position: {x: 652.8, y: 132.8}
   - narrativeObjectGuid: 6234ddbb-d37f-421f-a771-dc31fd5d976e
-    position: {x: 878.4, y: -46.4}
+    position: {x: 872.8, y: 78.399994}
   - narrativeObjectGuid: a4a67c77-c96f-4cfc-a868-a7ae33bfb228
     position: {x: 879.2, y: 76.8}
   - narrativeObjectGuid: 788ef770-d85d-4f8e-a1d4-6c903ae669c0
     position: {x: 426.40002, y: 188.8}
   - narrativeObjectGuid: 8bad5840-92de-4198-a587-8ec52b5f397b
-    position: {x: 652.8, y: 132.8}
+    position: {x: 649.60004, y: 132.8}
   - narrativeObjectGuid: b7a69c12-1ed5-4f9a-949a-44f48c0e7aeb
-    position: {x: 878.4, y: 76.8}
+    position: {x: 872.8, y: 201.6}
+  - narrativeObjectGuid: 5568b0b0-f1e0-46dd-b9dc-88b1c1c6a33a
+    position: {x: 557.60004, y: 364.8}
+  - narrativeObjectGuid: 4069e5bd-b4fc-4ce9-93f5-c4aecb272b0c
+    position: {x: 336, y: 36.8}
+  - narrativeObjectGuid: 8d025f17-dd99-4d1d-93b3-5f3b6874e85c
+    position: {x: 266.40002, y: -95.2}
+  - narrativeObjectGuid: d8a85aa5-3f61-464a-a4c5-5cb837d59783
+    position: {x: 582.4, y: -19.2}
+  - narrativeObjectGuid: 746225d6-5166-4e6c-9159-0e58bd79ed93
+    position: {x: 676.8, y: 108.8}
   viewContainerStates:
   - narrativeObjectGuid: 0
     narrativeObjectNodeGuids:
     - 50b140e0-e698-471c-a057-9fda0f65508a
     - 7f313df8-c517-4c76-9f22-16e5cd5e0d20
     - 961479ef-b773-45f7-8325-b6df4354494d
-    - 5fcae70e-dab7-4560-9f65-adf4eeccba9b
     - 51690372-eed0-4f90-8a62-663bccd5b0f4
+    - 5568b0b0-f1e0-46dd-b9dc-88b1c1c6a33a
   - narrativeObjectGuid: 98c09ada-d0cc-4ffb-94cf-9c34081d0ca4
     narrativeObjectNodeGuids:
     - 3951094c-c80e-48bc-aa4d-2dd0fa4ce8e9
@@ -2579,6 +2589,10 @@ MonoBehaviour:
   - narrativeObjectGuid: 80775635-d550-4cac-9038-4e470c499e11
     narrativeObjectNodeGuids:
     - 34ddb40f-da1d-44b7-a181-7c611574dca7
+    - 4069e5bd-b4fc-4ce9-93f5-c4aecb272b0c
+    - 8d025f17-dd99-4d1d-93b3-5f3b6874e85c
+    - d8a85aa5-3f61-464a-a4c5-5cb837d59783
+    - 746225d6-5166-4e6c-9159-0e58bd79ed93
   - narrativeObjectGuid: d547f47a-dd91-4cd0-9a39-4682e8017ca9
     narrativeObjectNodeGuids:
     - a4e4d42d-03d2-473b-9ddc-3ce3f411cc52
@@ -2801,5 +2815,12 @@ MonoBehaviour:
     - fe52e966-bad9-42a9-a166-ae4267559982
     - 768b795c-6bd7-40c1-a74d-acc04be0b0a3
     - 5a3d2581-6550-45c4-ac36-fc35377a745c
+  - narrativeObjectGuid: f17f49bf-77c9-4899-9686-0219a741edfd
+    narrativeObjectNodeGuids:
+    - 25e4f77d-82fe-4c04-a28b-50ee637d1cca
+    - 04b85b92-7887-41f0-9516-8e6a3653173f
+    - 254fa3c1-fa89-4893-838b-06bb6bdee2a7
+    - 272ce550-856d-4dd7-bce9-9f236741e610
   viewContainerStackGuids:
+  - 961479ef-b773-45f7-8325-b6df4354494d
   - 0
